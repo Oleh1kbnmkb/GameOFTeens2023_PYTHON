@@ -6,7 +6,7 @@ from aiogram import Bot, Dispatcher, types, executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
 
-bot = Bot(token='')
+bot = Bot(token='6218827645:AAGX4szbc3raeGnkxcp2MStPqE4nCx7y-Nk')
 storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)
 logging.basicConfig(level=logging.INFO)
@@ -104,6 +104,10 @@ async def goods(message: types.Message):
     await message.answer('Ось 4 рекомендованих тарифи, які відповідають твоїм потребам: ', reply_markup=taf1)
   elif message.text == "Висока вартість дзвінків":
     await message.answer('Ось 4 рекомендованих тарифи, які відповідають твоїм потребам: ', reply_markup=taf2)
+  elif message.text == "Неможливість використання роумінгу":
+    await message.answer('Ось 3 рекомендованих тарифи, які відповідають твоїм потребам: ', reply_markup=taf3)
+  elif message.text == "Обмеження використання послуги в певні часи":
+    await message.answer('Ось 3 рекомендованих тарифи, які відповідають твоїм потребам: ', reply_markup=taf4)
 
 
 if __name__ == "__main__":
