@@ -66,7 +66,17 @@ taf1 = InlineKeyboardMarkup(
     [InlineKeyboardButton(text = "Ґаджет Безпека", callback_data="1")],
     [InlineKeyboardButton(text = "Ґаджет Смарт", callback_data="2")],
     [InlineKeyboardButton(text = "Шкільний Лайф", callback_data="3")],
-    [InlineKeyboardButton(text = "Просто Лайф", callback_data="Просто Лайф")]
+    [InlineKeyboardButton(text = "Просто Лайф", callback_data="4")]
     ]
 )
 
+
+taf2 = InlineKeyboardMarkup(
+    inline_keyboard=[
+    [InlineKeyboardButton(text = "Інтернет БЕЗМЕЖ", callback_data="1")],
+    [InlineKeyboardButton(text = "Дзвінкий БЕЗМЕЖ", callback_data="2")],
+    [InlineKeyboardButton(text = "Вільний Лайф. Регіон", callback_data="3")],
+    [InlineKeyboardButton(text = "Platinum Лайф", callback_data="4")],
+    [InlineKeyboardButton(text = "Шкільний Лайф", callback_data="4")]
+    ]
+)
