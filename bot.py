@@ -2,7 +2,6 @@ import logging
 from keyboards import *
 from site_url import tar1
 from aiogram.dispatcher import FSMContext
-from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram import Bot, Dispatcher, types, executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
@@ -20,6 +19,14 @@ logging.basicConfig(level=logging.INFO)
 async def start(message: types.Message):
   await message.answer("Привіт! 😊 Я твій особистий помічник у виборі тарифу від lifecell. 📱💙 Моя мета - допомогти тобі знайти найкращу пропозицію, яка відповідає всім твоїм потребам. 🎯🔎 Якщо ти готовий, натисни кнопку <u>Поїхали</u>! 🚀\n\nP.S.: Більш детально про тарифи ти можеш дізнатися на сайті <b><a href='https://www.lifecell.ua/mobilnij-zvyazok/taryfy/'>Lifecell</a></b>. 😉✨", parse_mode='html', disable_web_page_preview=1, reply_markup=question1)
 
+
+
+async def set_default_commands(dp):
+     await bot.set_my_commands(
+          [
+          types.BotCommand('start', 'Запустити бота'),
+          ]
+     )
 
 
 
@@ -144,6 +151,11 @@ async def get_tarif_info(callback_query: types.CallbackQuery):
 
 
 
+async def on_startup(dp):
+     await set_default_commands(dp)
+
+
+
 
 if __name__ == "__main__":
-  executor.start_polling(dp)
+  executor.start_polling(dp, on_startup=on_startup)
