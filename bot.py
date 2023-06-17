@@ -107,7 +107,7 @@ async def answer_5(message: types.Message, state: FSMContext):
   
 
 
-
+# Підбір тарифів для користувача
 @dp.message_handler(state='goods')
 async def goods(message: types.Message, state: FSMContext):
   if message.text == "Мобільний Інтернет 🌐💻":
@@ -141,9 +141,6 @@ async def get_tarif_info(callback_query: types.CallbackQuery):
        await bot.send_message(callback_query.message.chat.id, message, parse_mode="html")
     else:
        await bot.send_message(callback_query.message.chat.id, "Такого товару нажаль немає в наявності😟")
-          
-          
-          
 
 
 
